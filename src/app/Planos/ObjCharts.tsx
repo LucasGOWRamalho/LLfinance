@@ -4,7 +4,7 @@ import Chart from "react-apexcharts";
 
 const ObjCharts: React.FC = () => {
   const monthlyData = [
-    { month: "Jan", value: 500, goal: 800 },
+    { month: "Jan", value: 500, goal: 200 },
     { month: "Fev", value: 850, goal: 800 },
     { month: "Mar", value: 700, goal: 800 },
     { month: "Abr", value: 400, goal: 800 },

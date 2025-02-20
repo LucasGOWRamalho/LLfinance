@@ -6,7 +6,7 @@ const goals = [
   { title: "Reserva de emergência", total: 10000, saved: 4000, deadline: "2024-12-31" },
 ];
 
-const GoalList: React.FC = () => {
+const ObjList: React.FC = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {goals.map((goal, index) => (
@@ -16,4 +16,4 @@ const GoalList: React.FC = () => {
   );
 };
 
-export default GoalList;
+export default ObjList;
