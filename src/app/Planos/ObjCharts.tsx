@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
 import Chart from "react-apexcharts";
+import plot from "./Objetivos";
 
 const ObjCharts: React.FC = () => {
   const monthlyData = [
-    { month: "Jan", value: 800, goal: 800 },
-    { month: "Fev", value: -500, goal: 800 },
-    { month: "Mar", value: 700, goal: 800 },
-    { month: "Abr", value: 850, goal: 800 },
-    { month: "Mai", value: 1200, goal: 800 },
+    { month: "Jan", value: 800, goal: plot },
+    { month: "Fev", value: -500, goal: plot },
+    { month: "Mar", value: 700, goal: plot },
+    { month: "Abr", value: 850, goal: plot },
+    { month: "Mai", value: 1200, goal: plot },
   ];
 
   // Função para definir a cor do mês baseado no progresso
@@ -35,7 +36,7 @@ const ObjCharts: React.FC = () => {
       categories: monthlyData.map((item) => item.month),
     },
     fill: {
-      colors: monthlyData.map((item) => getColor(item.value, item.goal)), // Aplicando cores individuais
+      colors: monthlyData.map((item) => getColor(item.value, item.goal)), // Plot está vindo sem rasultado, então não está sendo aplicado a cor
     },
     dataLabels: { enabled: false },
   };
