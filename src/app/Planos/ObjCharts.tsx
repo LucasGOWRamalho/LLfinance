@@ -4,19 +4,19 @@ import Chart from "react-apexcharts";
 
 const ObjCharts: React.FC = () => {
   const monthlyData = [
-    { month: "Jan", value: 500, goal: 200 },
-    { month: "Fev", value: 850, goal: 800 },
+    { month: "Jan", value: 800, goal: 800 },
+    { month: "Fev", value: -500, goal: 800 },
     { month: "Mar", value: 700, goal: 800 },
-    { month: "Abr", value: 400, goal: 800 },
+    { month: "Abr", value: 850, goal: 800 },
     { month: "Mai", value: 1200, goal: 800 },
   ];
 
   // Função para definir a cor do mês baseado no progresso
   const getColor = (value: number, goal: number) => {
     if (value >= goal * 1.3) return "#007bff"; // Azul → Muito acima da meta
-    if (value >= goal) return "#28a745"; // Verde → Dentro da meta
-    if (value >= goal * 0.7) return "#ffc107"; // Amarelo → Abaixo da meta
-    return "#dc3545"; // Vermelho → Muito abaixo da meta
+    else if (value >= goal) return "#28a745"; // Verde → Dentro da meta
+    else if (value >= goal * 0.7) return "#ffc107"; // Amarelo → Abaixo da meta
+    else return "#dc3545"; // Vermelho → Muito abaixo da meta
   };
 
   const series = [
@@ -29,13 +29,13 @@ const ObjCharts: React.FC = () => {
   const options: any = {
     chart: { type: "bar", height: 350 },
     plotOptions: {
-      bar: { horizontal: false, columnWidth: "55%" },
+      bar: { horizontal: false, columnWidth: "55%", distributed: true },
     },
     xaxis: {
       categories: monthlyData.map((item) => item.month),
     },
     fill: {
-      colors: monthlyData.map((item) => getColor(item.value, item.goal)),
+      colors: monthlyData.map((item) => getColor(item.value, item.goal)), // Aplicando cores individuais
     },
     dataLabels: { enabled: false },
   };
